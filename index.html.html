@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 110B11 , A5D0A8 , 8CADA7 , B7990D , F2F4CB colors ima use in  */
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .nav {
+            background-color: #B7990D;
+            color: black;
+            height: 5vh;
+            width: 100vw;
+            box-sizing: border-box;
+            justify-content: center;
+            display: flex;
+            border: 5px solid #B7990D;
+            position: fixed;
+
+
+        }
+
+        .small {
+            position: fixed;
+        }
+
+        span {
+            margin: 0px 5%;
+        }
+
+        #search {
+            width: 150px;
+
+        }
+
+        .name {
+            font-size: larger;
+            margin-right: 4%;
+            margin-left: 2%;
+            color: black;
+            position: fixed;
+            z-index: 1;
+            margin-top: 5px;
+            background-color: #B7990D;
+            /* display: inline-block; */
+            /* width: 100%; */
+            /* height: 5%; */
+
+        }
+
+        .image {
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            /* position: absolute; */
+            /* margin-top: 5vh; */
+            display: flex;
+
+        }
+
+        .text {
+            display: inline-block;
+            width: 60%;
+            height: 100%;
+            background-color: black;
+            box-sizing: border-box;
+            border: 50px solid black;
+            color: antiquewhite;
+            text-align: center;
+            justify-content: center;
+            padding-top: 15%;
+
+
+        }
+
+        .btn {
+            font-weight: 900;
+            background-color: aqua;
+            border: 5px double rgb(69, 5, 5);
+            margin-top: 10px;
+            width: 150px;
+            height: 30px;
+            border-radius: 20px;
+        }
+
+        .imgg {
+            display: flex;
+            background-color: blueviolet;
+            width: 40%;
+            height: 100%;
+            /* width: 493.867px;
+    height: 589.333px;*/
+        }
+
+        .navv {
+            width: 100%;
+            height: 10%;
+            background-color: #B7990D;
+            display: inline-flex;
+            /* position: fixed; */
+        }
+
+        .slidr {
+            margin: 5px;
+            border: 3px solid;
+            background-color: #b7980d;
+            /* position: fixed; */
+        }
+
+        .slider {
+            line-height: 50px;
+            background-color: #B7990D;
+            font-weight: bold;
+            /* display: none; */
+
+
+        }
+
+        #k,
+        #c {
+            /* display: flex; */
+            display: block;
+            width: 100%;
+            justify-content: end;
+            background-color: #B7990D;
+        }
+
+        .nn {
+            width: 98vw;
+        }
+
+        /* .quali{
+    margin-top: 5vh;
+    border-top: 5vh solid;
+} */
+
+        .box {
+            width: 40%;
+            height: auto;
+            background-color: black;
+            /* display: inline-flex; */
+            margin-top: 5vh;
+            padding: 0;
+            text-decoration: none;
+
+        }
+
+        .all {
+            /* display: inline-flex; */
+            display: flex;
+            text-align: center;
+            font-size: xxx-large;
+
+        }
+
+        .T {
+            width: 20%;
+            height: 100PX;
+            animation: T 2s 1 alternate 1s;
+
+
+        }
+
+        .A {
+            animation: T 2s 1 alternate 1s;
+            width: 20%;
+            height: 100PX;
+        }
+
+        .J {
+            animation: T 2s 1 alternate 1s;
+            width: 20%;
+            height: 100PX;
+
+        }
+
+        .I {
+            animation: T 2s 1 alternate 1s;
+            width: 20%;
+            height: 100PX;
+
+        }
+
+        .M {
+            animation: T 2s 1 alternate 1s;
+            width: 20%;
+            height: 100PX;
+        }
+
+        .h {
+
+            /* display: block; */
+            display: none;
+            color: antiquewhite;
+            max-width: 85%;
+        }
+
+        @keyframes T {
+            0% {
+                height: 0;
+            }
+
+            5% {
+                height: 100px;
+            }
+
+            20% {
+                width: 20%;
+                height: 100px;
+                margin-top: 100%;
+            }
+
+            50% {
+                width: 10%;
+                height: auto;
+                margin-top: 20vh;
+            }
+
+            100% {
+                width: 10%;
+                height: auto;
+                margin-top: 20vh;
+            }
+
+
+
+        }
+
+        @keyframes dis {
+            0% {
+                transform: rotatez(0deg);
+                font-size: xx-small;
+            }
+
+            50% {
+                transform: rotatez(180deg);
+                font-size: xx-small;
+            }
+
+            90% {
+                transform: rotatez(340deg);
+                font-size: xx-small;
+            }
+
+            100% {
+                transform: rotatez(360deg);
+            }
+        }
+
+        .p1 {
+            width: 100vw;
+            height: 100vh;
+
+
+        }
+
+        .qualifi {
+            width: 100vw;
+            height: 100vh;
+            /* animation: bg-ch 2s 1 alternate 1s; */
+            background-color: #B7990D;
+            /* border-top: 30px solid red; */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+
+        .edu {
+            width: 80%;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.418);
+            text-align: center;
+            margin: 5%;
+            display: flex;
+            border-radius: 5%;
+
+        }
+
+        .sch {
+            width: 25%;
+            height: 100%;
+            display: inline-block;
+            margin-left: 5%;
+            margin-top: 15%;
+        }
+
+        .con {
+            width: 40%;
+            height: 100%;
+            padding-top: 100px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .taj {
+            padding: 5% 0px;
+            display: flex;
+            justify-content: end;
+            text-align: center;
+            width: 50%;
+            /* filter: grayscale(80%); */
+        }
+        .photo{
+            border-radius: 20%;
+            width:300px ;
+            height:350px;
+        }
+
+        .proj {
+            /* aspect-ratio: 2/3; */
+            width: 25%;
+            height: 40vh;
+            /* background-color: rgba(0, 0, 255, 0.336); */
+            margin: 5%;
+            /* border-radius: 10px; */
+        }
+
+        input {
+            display: block;
+            margin: 20px 5vw;
+            width: 70%;
+            height: 30px;
+            border-radius: 30px;
+        }
+
+        @keyframes bg-ch {
+            0% {
+                background-color: black;
+            }
+
+            /* 50%{
+        background-color: #a5d0a8;
+    }*/
+            75% {
+                background-color: rgb(140, 210, 131);
+            }
+
+            100% {
+                background-color: #b7980d;
+            }
+
+        }
+         
+        @media screen and (max-width:850px ) {
+            .image{
+                flex-direction: column;
+            }
+           .text{
+            
+             padding: 30% 0px;
+             /* font-size: xx-small; */
+             /* padding:0px; */
+             width: 100%;
+             height: 60%;
+             border: 0px solid;
+            
+            }
+
+            .text h1, button{
+                animation: dis 1s 1 ease .5s ;
+            }
+            .box{
+            
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width:700px) {
+             .text{
+                padding: 40% 0px;
+
+            }
+        }
+        @media screen and (max-width:550px) {
+             .text{
+                padding: 60% 0px;
+
+            }
+            .edu{
+                margin-top: 20%;
+                flex-direction: column;
+            }
+            .proj{
+                aspect-ratio: 3/3;
+                width: auto;
+                height: auto;
+            }
+        }
+        @media screen and (min-width:550px) and (max-width:850px) {
+             .text{
+                padding: 60% 0px;
+
+            }
+            .edu{
+                margin-top: 10%;
+                display: inline-block;
+            }
+            .proj{
+                display: inline-block;
+
+            }
+        }
+        @media screen and (max-width:430px) {
+             .text{
+                padding: 70% 0px;
+
+            }
+        }
+
+        /* img{
+            filter: grayscale();
+        } */
+      @media screen and (min-width:320px) and (max-width:850px) {
+        input{
+            width: 85%;
+        }
+        .con{
+            height: 50%;
+            padding-top: 24px;
+            width: 100%;
+            display: inline-block;
+        }
+        .taj{
+            justify-content: center;
+            width: 100%;
+
+        }
+        .photo{
+            width: 260px;
+  height: 286px;
+        }
+      }
+      @media screen and (max-height:650px) and (min-width:350px) and (max-width:850px) {
+        .photo{
+            width: 148px;
+    height: 127px;
+
+        }
+        .con{
+            height: 60%;
+        }
+      }
+      @media screen and (max-height:650px) and (min-width:310px) and (max-width:350px) {
+        .photo{
+            width: 148px;
+    height: 127px;
+
+        }
+        .con{
+            height: 65%;
+        }
+      }
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="p1" id="p1">
+        <div class="nav" id="navmain" >
+            <span onclick="bgch()"><a href="#qualification"
+                    style="text-decoration: none; color: black;">QUALIFICATIONS</a></span>
+            <span onclick="bgch()" ><a href="#projects" style="text-decoration: none; color: black;" >PROJECTS</a></span>
+            <span onclick="bgch()"> <a href="#contact" style="text-decoration: none; color: black;">CONTACT</a></span>
+            <span><a href="mailto:tajimahmed360@gmail.com" target="_blank"
+                    style="text-decoration: none; color: black;">EMAIL</a></span>
+        </div>
+
+        <h1 class="name" id="name"> <a href="" style="text-decoration: none; color: black;">&Popf;ortfolio </a></h1>
+
+
+
+        <div class="small">
+            <div class="navv" id="navnone">
+                <h1 class="nn"><a href=" " style="text-decoration: none; color: black;"> &Dopf;eveloper &Topf;ajim</a></h1>
+                <button class="slidr" id="ham" onclick="ham()"><img src="tajim.png" id="k" height="40vh"
+                        alt="aa"></button>
+                <!-- <img  src="cross.png"alt="aa"> --><button onclick="closed()">
+                    <h1 id="c" style="height:40vh; background-color: #B7990D; font-size: xxx-large;">X</h1>
+                </button>
+            </div>
+            <div class="slider" id="slider">
+                <h2> <a href="#qualification" style="text-decoration: none; color: black;"
+                        onclick="closed()">QUALIFICATIONS </a> </h2>
+                <h2> <a href="#projects" style="text-decoration: none; color: black;" onclick="closed()"> PROJECTS</a>
+                </h2>
+                <h2><a href="#contact" style="text-decoration: none; color: black;" onclick="closed()">CONTACT</a></h2>
+                <h2><a href="mailto:tajimahmed360@gmail.com" target="_blank"
+                        style="text-decoration: none; color: black;" onclick="closed()">EMAIL</a></h2>
+            </div>
+        </div>
+        <div class="image">
+            <div class="text">
+                <h1>hey,</h1>
+                <h1>My name is tajim.</h1>
+                <h1>I am a Web Developer.</h1>
+                <h1>Based In Mumbai Maharasthra.</h1>
+                <button class="btn">Download CV</button>
+            </div>
+            <div class="box">
+                <div class="all">
+                    <div class=" T" id="T"><img src="/T.png" width="100%" alt="aa">
+                    </div>
+                    <div class=" A" id="A"><img src="/A.png" width="100%" alt="aa"></div>
+                    <div class=" J" id="J">
+                        <img src="/J.png" width="100%" alt="aa">
+                    </div>
+                    <div class=" I" id="I">
+                        <img src="/I.png" width="100%" alt="aa">
+                    </div>
+                    <div class=" M" id="M">
+                        <img src="/M.png" width="100%" alt="aa">
+                    </div>
+                </div>
+
+                <div class="h" id="h">
+                    <h1>welcome:👋</h1>
+                    <a href="https://github.com/Tajim-Ahmed" target="_blank"
+                        style="text-decoration: none; color:antiquewhite">
+                        <h1>Github</h1>
+                    </a>
+                    <a href="https://www.instagram.com/tajim.99" target="_blank"
+                        style="text-decoration: none; color:antiquewhite">
+                        <h1>Instagram <img src="/inst" alt=""></h1>
+                    </a>
+                    <a href="mailto:tajimahmed360@gmail.com" target="_blank"
+                        style="text-decoration: none; color:antiquewhite">
+                        <h1>Email📧</h1>
+                    </a>
+                    <a href="https://twitter.com/PIDGE_E_E_99" target="_blank"
+                        style="text-decoration: none; color:antiquewhite">
+                        <h1>Twitter</h1>
+                    </a>
+                    <a href="https://wa.me/+917208828275" target="_blank"
+                        style="text-decoration: none; color:antiquewhite">
+                        <h1>Watsapp📲</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="qualifi" id="qualification">
+            <!-- qualification  -->
+            <div class="edu">
+                <div class="proj">
+                    <img src="/mumuni.jpeg
+                    " width="80%" height="70%" style=" padding-top:10px; border-radius: 10%;" onclick="bgch()"><h4>Pursuing BE(IOT)</h4><h4>second year</h4>
+                   </div>
+                   <div class="proj">
+                       <img src="/frontend.jpeg" width="80%" height="70%" style=" padding-top:10px; border-radius: 10%;"><h2>Front-End Developer</h2>
+   
+                   </div>
+                   <div class="proj">
+                       <img src="/JS.png" width="80%" height="70%" style=" padding-top:10px; border-radius: 10%;"><h2>Javascript</h2>
+                     </div>
+
+            </div>
+        </div>
+        <div class="qualifi" id="contact">
+            <!-- contacts -->
+            <div class="edu">
+                <div class="con">
+                    <h1>Lets Build Together</h1>
+                    <input type="text" placeholder="enter your mail address">
+                    <h6>we will not share your personal details to anyone</h6>
+                    <input type="number" placeholder="enter phone NO">
+                    <input type="text" placeholder="how can i help you">
+                    <button style="width: 80px; height: 25px; border: 3px groove black; border-radius: 30px;">submit
+                    </button>
+                </div>
+                <div class="taj">
+                    <img class="photo" src="/imagemeri.jpg"  alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="qualifi" id="projects">
+            <!-- projects -->
+            <div class="edu">
+                <div class="proj">
+                 <a href=""><img src="/ecom.jpeg" width="80%" height="70%" style=" padding-top:10px; border-radius: 10%;"></a><h3>E-commerce platform</h3>
+                </div>
+                <div class="proj">
+                    <a href=""><img src="/clock.jpeg" width="80%" height="70%"style=" padding-top:10px; border-radius: 10%;"></a><h2>Real Time Clock</h2>
+
+                </div>
+                <div class="proj">
+                    <a href=""><img src="/todolist.jpg" width="80%" height="70%" style=" padding-top:10px; border-radius: 10%;"></a><h2>TODO-List</h2>
+
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            mydate = new Date();
+            d = mydate.getSeconds();
+            // console.log(d);
+            setInterval(() => {
+                e = new Date();
+                a = e.getSeconds();
+               if (a >= d + 2) {
+                    document.getElementById("T").style = "width: 10%;height: auto; margin-top: 20vh;";
+                    document.getElementById("A").style = "width: 10%;height: auto; margin-top: 20vh;";
+                    document.getElementById("J").style = "width: 10%;height: auto; margin-top: 20vh;";
+                    document.getElementById("I").style = "width: 10%;height: auto; margin-top: 20vh;";
+                    document.getElementById("M").style = "width: 10%;height: auto; margin-top: 20vh;";
+                }
+
+                if (a >= d + 3) {
+
+                    document.getElementById("h").style = " display: block ; color: antiquewhite;width: auto;height: auto;animation: dis .5s ease-in-out 1 ;";
+
+                }
+            }, 500);
+
+            // yaha se nav ki script hai 
+
+
+            navvnone()
+            slider()
+            c()
+
+            function slider() {
+                document.getElementById("slider").style = "display:none;";
+            }
+            function c() {
+                document.getElementById("c").style = "display:none;";
+
+            }
+            function k() {
+                document.getElementById("ham").style = "display:none;";
+
+            }
+
+            function ham() {
+
+                document.getElementById("slider").style = " line-height: 50px; background-color: #B7990D;font-weight: bold;padding-top: 50px;";
+                document.getElementById("c").style = " display: block; width: 100%; justify-content: end;";
+
+                k()
+            }
+
+            function closed() {
+
+                slider()
+                c()
+                document.getElementById("ham").style = " margin: 5px;border: 3px solid; ";
+                bgch()
+            }
+
+            function navvnone() {
+                document.getElementById("navnone").style = " display:none;";
+            }
+
+            function navvshow() {
+                document.getElementById("navnone").style = " width: 100%; height:10%;  background-color: #B7990D; display: inline-flex; ";
+            }
+
+            function navnone() {
+                document.getElementById("navmain").style = " display:none;";
+            }
+            function name() {
+                document.getElementById("name").style = " display:none;";
+            }
+
+            
+            function bgch(){
+                document.getElementById("qualification").style= "animation: bg-ch 2s 1 alternate 1s;width: 100vw;height: 100vh;background-color: #B7990D;box-sizing: border-box;display: flex;justify-content: center;"           
+                document.getElementById("contact").style= "animation: bg-ch 2s 1 alternate 1s;width: 100vw;height: 100vh;background-color: #B7990D;box-sizing: border-box;display: flex;justify-content: center;"           
+                document.getElementById("projects").style= "animation: bg-ch 2s 1 alternate 1s;width: 100vw;height: 100vh;background-color: #B7990D;box-sizing: border-box;display: flex;justify-content: center;"     
+                
+             }
+
+             function bgchclose(){
+                document.getElementById("qualification").style= "width: 100vw;height: 100vh;background-color: #B7990D;box-sizing: border-box;display: flex;justify-content: center;"           
+                document.getElementById("contact").style= "width: 100vw;height: 100vh;background-color: #B7990D;box-sizing: border-box;display: flex;justify-content: center;"           
+                document.getElementById("projects").style= "width: 100vw;height: 100vh;background-color: #B7990D;box-sizing: border-box;display: flex;justify-content: center;"
+
+             }
+
+             if (window.innerWidth <= 850) {
+                    navvshow()
+                    navnone()
+                    name()
+                }
+
+            setInterval(() => {
+                if (window.innerWidth <= 850) {
+                    navvshow()
+                    navnone()
+                    name()
+                }
+            }, 1000);
+
+            //   function bgclr(){
+            //     document.getElementsByClassName("qualifi").style = "animation: bg-ch 2s  1 alternate 1s;"
+            //   }
+
+
+        </script>
+
+
+
+</body>
+
+</html>
