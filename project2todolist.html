@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TODOs list</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      
+      /* background-image: url(https://media.istockphoto.com/id/1465316262/photo/businessman-inspecting-paperwork-document-of-business-data-analysis-working-management-report.jpg?s=1024x1024&w=is&k=20&c=4fE6KAnT4jBdMb1d1TVFOELKjKuEgkus0pJ6araaDVQ=)
+       */
+
+       background-color: black;
+    
+    }
+
+    .nav {
+      min-height: 10vh;
+      background-color: rgb(2, 2, 2);
+      border: 0px 80px 0px 80px solid rgb(249, 248, 248);
+      position: sticky;
+    }
+
+    .pidge{
+      color: white;
+      /* margin-top: 30px; */
+  margin-left: 60px;
+  font-size: medium;
+  display: inline-block;
+    }
+    /* h1{
+      color: white;
+  font-size: larger;
+  display: inline-block;
+    } */
+
+    .data {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.084);
+      width: 40%;
+      height: 100vh;
+      margin-left: 5%;
+      border: 5px solid rgb(156, 77, 12);
+      box-sizing: border-box;
+      text-align: center;
+      color: white;
+
+    }
+
+    .display {
+      display: inline-block;
+      background-color: rgba(239, 230, 230, 0.671);
+      width: 49%;
+      height: 100vh;
+      margin-right: 5%;
+      border: 5px solid rgb(156, 77, 12);
+      box-sizing: border-box;
+      position: absolute;
+      text-align: center;
+      /* color: white; */
+
+
+
+    }
+
+    .title-input {
+      width: 70%;
+    }
+
+    .disc-input {
+      height: 250px;
+      width: 80%;
+
+    }
+
+    .btn {
+      background-color: rgb(91, 203, 255);
+      border-radius: 20px;
+      text-align: center;
+      height: 50px;
+      width: 85%;
+      margin-top: 30px;
+    }
+
+    .del {
+      background-color: rgb(91, 203, 255);
+      border-radius: 20px;
+      text-align: center;
+      height: 30px;
+      width: 70px;
+      margin-left: 80px;
+      display: inline-block;
+      padding-top: 8px;
+
+    }
+    #disc{
+      width: 80%;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="pidge"> <h1>&Dopf;eveloper &Topf;ajim
+        plan your day before to avoid getting distracted from your goal </h1>
+    </div>
+    <!-- <div class="cat">whats your mood</div> -->
+    <!-- <button class="sign">SIGN IN</button> -->
+    <!-- <button class="cart">🛒</button> -->
+  </div>
+
+  <div class="todo">
+    <div class="data">
+      <h1>TITLE</h1>
+      <input type="text" id="tit" class="title-input" placeholder="EX:- WORK,FAMILY TIME,FITNESS, LEARNING, ETC ">
+      <h1>discription</h1>
+      <textarea name="discription" id="disc" cols="30" rows="10" placeholder="discription"></textarea>
+      <button class="btn" id="add">ADD ITEMS</button>
+      <button class="btn" onclick="cleared(this)" id="cleared">clear</button>
+    </div>
+    <div class="display">
+
+      <h1>LIST</h1>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="tablebody">
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td class="del">delete </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+
+  <script>
+    function getandupdate(){
+      console.log("adding items..");
+      tit = document.getElementById('tit').value;
+      disc = document.getElementById('disc').value;
+
+      if (localStorage.getItem('itemsJson')==null) {
+        itemJsonArray = [];
+        itemJsonArray.push([tit, disc]);
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+      }
+      else {
+        itemJsonArraystr = localStorage.getItem('itemsJson')
+        itemJsonArray = JSON.parse(itemJsonArraystr);
+        itemJsonArray.push([tit, disc]);
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+      }
+      update()
+    }
+      function update (){
+       
+      if (localStorage.getItem('itemsJson')==null) {
+        itemJsonArray = [];
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+      }
+      else {
+        itemJsonArraystr = localStorage.getItem('itemsJson')
+        itemJsonArray = JSON.parse(itemJsonArraystr);
+      }
+
+      // populate the table
+
+      let  tablebody = document.getElementById('tablebody')
+      let str = "";
+      itemJsonArray.forEach((element, index) => {
+        str += `
+          <tr>
+            <th scope="row">${index + 1}</th>
+            <td>${element[0]} </td>
+            <td>${element[1]}</td>
+            <td class="del" onclick ="deleted(${index})">delete </td>
+          </tr>`;
+    
+    });
+
+    tablebody.innerHTML = str;
+  };
+
+      
+
+    add = document.getElementById("add");
+    add.addEventListener("click", getandupdate);
+    update();
+
+    function deleted(itemindex){
+      console.log("delete" , itemindex)
+      itemJsonArraystr = localStorage.getItem('itemsJson')
+        itemJsonArray = JSON.parse(itemJsonArraystr);
+       itemJsonArray.splice(itemindex, 1)
+        localStorage.setItem('itemsJson', JSON.stringify(itemJsonArray))
+        update()
+    }
+     
+    function cleared(){
+      if (confirm('do u really want to clear')){
+      localStorage.clear();
+      console.log('clearing')
+      update()
+    }
+  }
+
+  </script>
+</body>
+
+</html>

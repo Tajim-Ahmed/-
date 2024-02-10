@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <title>clock</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image:url(https://img.freepik.com/free-photo/html-system-website-concept_23-2150376770.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705622400&semt=ais) ;
+      }
+      
+      .nav {
+      min-height: 10vh;
+      background-color: rgb(2, 2, 2);
+      border: 0px 80px 0px 80px solid rgb(249, 248, 248);
+      border-bottom: 5px double rgb(99, 22, 22);
+      position: sticky;
+    }
+
+    .pidge {
+      color: aqua;
+      font-size: 40px;
+      margin-left: 20px;
+      display: inline-block;
+      margin-right: 100px;
+      text-shadow: 3px 4px rgba(255, 255, 255, 0.384);
+
+    }
+
+    /* .searchbar {
+      display: inline-block;
+      margin-left: 80px;
+
+    } */
+
+    /* .sc {
+      width: 400px;
+      height: 30px;
+      margin-bottom: 8px;
+    } */
+
+    .cat {
+      font: italic;
+      font-size: 25px;
+      color: aqua;
+      display: inline-block;
+      margin-left: 140px;
+      margin-right: 140px;
+      margin-bottom: 9px;
+      text-shadow: 3px 4px rgba(255, 255, 255, 0.384);
+      /* background-position: center center; */
+    }
+
+    .sign {
+      color: aqua;
+      background-color: rgb(0, 0, 0);
+      display: inline-block;
+      margin-left: 80px;
+      /* height: 30px; */
+      /* width: 60px; */
+      font: bold;
+      font-stretch: expanded;
+      margin-bottom: 9px;
+      border: 3px double rgb(99, 22, 22);
+      margin-right: 100px;
+
+    }
+
+    .cart {
+      color: aqua;
+      background-color: rgb(0, 0, 0);
+      display: inline-block;
+      margin-left: 40px;
+      /* height: 30px; */
+      /* width: 60px; */
+      font: bold;
+      font-stretch: expanded;
+      margin-bottom: 9px;
+      border: 3px double rgb(99, 22, 22);
+      text-align: right;
+    }
+
+    .container {
+      height: 40vh;
+  width: 90%;
+  background-color: rgba(0, 0, 0, 0.452);
+  margin: 5%;
+  text-align: left;
+  color: white;
+  border: 10px groove aqua;
+  text-align: center;
+  border-radius: 35px;
+  opacity: ;
+  text-shadow: 3px 3px rgb(21, 11, 227);
+
+    }
+    .tme,
+    #day {
+      padding-top: 30px;
+      font: bold;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+
+    @media  screen and (max-width:1130px) {
+         .sign,.cart{
+          display: none;
+         }
+      
+    }
+    @media  screen and (max-width:810px) {
+         .pidge{
+          display: block;
+          text-align: center;
+          margin: 0px;
+
+         }
+         .cat{
+          display: block;
+          margin: 0px;
+          text-align: center;
+         }
+    }
+  
+
+  </style>
+
+</head>
+
+<body>
+  <div class="nav">
+    <div class="pidge">developer &topf;ajim </div>
+   
+    <div class="cat">LIVE CLOCK </div>
+    <button class="sign">TIME</button>
+    <button class="cart">DATE</button>
+  </div>
+  
+  
+  <div class="container">
+    <h1 class="tme"> CURRENT TIME IS : <span id="time"></span></h1>
+    <!-- am,pm, day , date , time in location , etc -->
+    <h1 id=day>ON : <span id="d"></span></h1>
+
+
+  </div>
+  <script>
+    let mydate;
+        let d;
+        let H;
+        
+          setInterval(() => {
+        mydate = new Date();
+        if (mydate.getDay() == 0) {
+            d = "Sunday";
+          }
+          else if (mydate.getDay() == 1) {
+            d = "Monday";
+          }
+          else if (mydate.getDay() == 2) {
+            d = "Tuesday";
+          }
+          else if (mydate.getDay() == 3) {
+            d = "Wednesday";
+          }
+          else if (mydate.getDay() == 4) {
+            d = "Thursday";
+          }
+          else if (mydate.getDay() == 5) {
+            d = "Friday";
+          }
+          else {
+            d = 'Saturday'
+          }
+    
+          if (mydate.getHours() <= 12) {
+            H = mydate.getHours()
+            am = "AM";
+          }
+          else {
+            H = mydate.getHours() - 12;
+            am = "PM";
+          }
+    
+          a = d + ' ' + ' ' + ' ' + mydate.toLocaleDateString() ;
+          b =  H + ':' + mydate.getMinutes() + ':' + mydate.getSeconds() + '  '  + am ;
+          
+          document.getElementById('d').innerHTML = a;
+          document.getElementById('time').innerHTML = b;
+            // window.location.reload();
+          }, 900);
+          
+  </script>
+</body>
+</html>
